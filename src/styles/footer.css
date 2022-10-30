@@ -1,0 +1,78 @@
+.footer{
+    padding-top: 40px;
+    padding-bottom: 30px;
+    background: #D9D9D9;
+}
+
+.footer_logo img{
+    width: calc(100% - 80%);
+    margin-bottom: 5px;
+}
+
+.footer_logo h5 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.footer_logo p {
+    font-size: 0.9rem;
+    color: white;
+    line-height: 28px;
+}
+
+.atendemos {
+    background: transparent !important;
+}
+
+.atendemos span {
+    font-weight: 600;
+    font-size: 1rem;
+    color:black;
+}
+
+.atendemos p {
+    color: black;
+}
+
+.footer_title {
+    font-size: 1.1rem;
+    color: black;
+    font-weight: 600;
+}
+
+.newsletter {
+    padding: 7px 25px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.newsletter input{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.newsletter input:focus{
+    outline: none;
+}
+
+.newsletter span img{
+    color:#D9D9D9;
+}
+
+.newsletter input::placeholder{
+    color:black;
+}
+
+.Redes_sociales span img{
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.texto_copyright {
+    font-size: 0.8rem;
+    color: black;
+}
