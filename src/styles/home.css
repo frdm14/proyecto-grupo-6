@@ -2,6 +2,11 @@
     padding-top: 40px;
 }
 
+.imagen_prin img{
+    width:30%;
+    
+}
+
 .titulohome {
     font-size: 2.5rem;
     line-height: 40px;
@@ -54,4 +59,38 @@
 .icono_registro img{
     padding: 5px;
     border-radius: 35%;
+}
+
+.titulo {
+    color:grey;
+}
+.titulo span{
+    color: black;
+}
+
+.dia_categoria {
+    background: #D9D9D9;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 0px;
+    border-radius: 8px;
+}
+
+.dia_categoria button{
+    border: none;
+    outline: none;
+    padding: 7px 20px;
+    background: transparent;
+    
+}
+
+.dia_categoria button img {
+    width: 20px;
+    height: 20px;
+}
+
+.todasBtn {
+    background: black !important;
+    border-radius: 5px ;
+    color: white !important;
 }

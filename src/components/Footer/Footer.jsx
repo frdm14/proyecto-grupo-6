@@ -17,8 +17,7 @@ const Footer = () => {
                 <div className='footer_logo text-start'>
                     <img src={logo} alt='logo' />
                     <h5>Sneakers Store</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium iure cumque atque  
-                    soluta harum assumenda cupiditate. Distinctio nemo eaque quibusdam inventore!</p>
+                    <p>A fin de atender un nuevo sector del mercado, en el año 2010 se lleva a cabo la apertura de una nueva tienda online con el nombre de Sneakers Store, ofreciendo una propuesta diferente al público.</p>
                 </div>
                 </Col>
 

@@ -24,7 +24,7 @@ const datosCategoria = [
 ]
 
 const Categoria = () => {
-    return <Container>
+    return <Container className='mt-0'>
         <Row>
 
             {datosCategoria.map((item, index) => (
