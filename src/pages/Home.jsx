@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Helmet from "../components/Helmet/Helmet";
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 
-import imgprinc from "../assets/Imagenes/imagenprincipal.jpg";
+//*import imgprinc from "../assets/Imagenes/imagenprincipal.jpg";*//
 import isegur from "../assets/Imagenes/iconoseguridad.png";
 import "../styles/home.css";
 
@@ -22,8 +22,16 @@ import imgCategoriaOfertas1 from "../assets/Imagenes/juego-de-basquetbol.png";
 import imgCategoriaOfertas2 from "../assets/Imagenes/running-icono.png";
 
 import Tarjetas from "../components/Categorias/tarjetaDeProductos/tarjetas";
-import { useEffect } from "react";
-import { useState } from "react";
+
+import logoNike from "../assets/Imagenes/nike.png";
+import logoAdidas from "../assets/Imagenes/adidas.png";
+import logoNewba from "../assets/Imagenes/new balance.png";
+import logoPuma from "../assets/Imagenes/puma.png";
+import logoUmbro from "../assets/Imagenes/umbro.png";
+
+import compraOnline from "../assets/Imagenes/fotocompraonline.jpg";
+
+import InstaSlider from '../components/Categorias/slider/instaSlider';
 
 const formasPago = [
     {
@@ -78,7 +86,7 @@ const Home = () => {
         <section>
             <Container>
                 <Row>
-                    <Col lg="6" md="6">
+                    <Col lg="5" md="6">
                     <div className='contenido_imagen'>
                         <h5 className='mb-3'>
                             Importamos desde USA
@@ -105,16 +113,17 @@ const Home = () => {
                     </div>
                     </Col>
 
-                    <Col lg="6" md="6">
+                    <Col lg="7" md="6">
                         <div className='imagen_prin'>
-                        <img src={imgprinc} alt="imagenprincipal" className='w-100' />
+                        <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/VnE7m8JI7MY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" autoplay muted allowfullscreen></iframe>
+                        
                         </div>
                     </Col>
 
                 </Row>
             </Container>
         </section>
-        <section className= "">
+        <section className= "cate">
             <Categoria />
         </section>
         <section className='pt-0 pb-0'>
@@ -141,7 +150,7 @@ const Home = () => {
                 </Row>
             </Container>
         </section>
-            <section>
+            <section className='pt-3'>
                 <Container>
                     <Row>
                         <Col lg="12" className='text-center'>
@@ -166,11 +175,75 @@ const Home = () => {
                         <Col lg="3" md="4" key={item.id} className="mt-5">
                             <Tarjetas item={item} />
                         </Col>
-                        ))};
+                        ))}
                     </Row>
                 </Container>
             </section>
-            
+            <section className='pt-2'>
+                <Container >
+                    <Row>
+                        
+                        <div className='marcas_dispo'>
+                            <h2 className='titulo_marcas'>Marcas Disponibles</h2>
+                            <p>Disfruta de nuestro showroom de las diferentes marcas</p>
+                        </div>
+                        
+                            <div className='logos_marcas '>
+                            <img src={logoNike} alt="nike" />
+                            <img src={logoAdidas} alt="adidas" />
+                            <img src={logoNewba} alt="newbalance" />
+                            <img src={logoPuma} alt="puma" />
+                            <img src={logoUmbro} alt="umbro" />
+                            
+                        </div>                        
+                    </Row>
+                </Container>
+            </section>
+            <section className='beneficios_compra-online'>
+                <Container>
+                    <Row>
+                        <Col lg='6' md='6' >
+                            <img src={compraOnline} alt="foto-compra-online" className='w-100'/>
+                        </Col>
+
+                        <Col lg='6' md='6'>
+                            <div className='beneficios_online'>
+                            <h2 className='titulo_compras_online'>
+                                Beneficios de Comprar Online
+                            </h2>
+                            <ListGroup className='mt-2'>
+                                <ListGroupItem className='border-0 ps-0'>
+                                    <p className='d-flex align-items-center gap-1'>Envios gratis a todo el pais en compras superiores a $ 150.</p>
+                                </ListGroupItem>
+                                <ListGroupItem className='border-0 ps-0'>
+                                    <p className='d-flex align-items-center gap-1'>Primer cambio sin costo.</p>
+                                </ListGroupItem>
+                                <ListGroupItem className='border-0 ps-0'>
+                                    <p className='d-flex align-items-center gap-1'>Realizando tu primera compra online, obtenes un 20% OFF en la siguiente compra.
+                                    </p>
+                                </ListGroupItem>
+                                <ListGroupItem className='border-0 ps-0'>
+                                    <p className='d-flex align-items-center gap-1'>Registrandote en la pagina obtenes puntos
+                                        con tus COMPRAS.
+                                    </p>
+                                </ListGroupItem>
+                            </ListGroup>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+            <section className='carrusel_final'>
+                <Container>
+                    <Row>
+                    <div className='carrusel mb-4' >
+                        <h2 className='titulo_carrusel'>Ingresa a nuestro <span>Instagram</span></h2>
+                        <p className='descripcion_carrusel'>Alli encontraras todos los elementos y accesorios necesarios para el deporte amateur y profesional</p>
+                    </div>
+                    <InstaSlider></InstaSlider>
+                    </Row>
+                </Container>
+            </section>
     </Helmet>
 };
 

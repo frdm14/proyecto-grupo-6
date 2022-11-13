@@ -1,0 +1,5 @@
+.slider_contenido img{
+    width: 300%;
+    height: auto;
+    object-fit:cover;
+}

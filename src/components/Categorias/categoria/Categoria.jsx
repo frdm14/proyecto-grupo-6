@@ -28,7 +28,7 @@ const Categoria = () => {
         <Row>
 
             {datosCategoria.map((item, index) => (
-                <Col lg="4" md="4"  >
+                <Col lg="4" md="4" className='mb-3'>
                     <div className='item_categoria d-flex justify-content-center gap-3'>
                         <div className='img_categoria'>
                             <img src={item.imgUrl} alt="item_categoria" />

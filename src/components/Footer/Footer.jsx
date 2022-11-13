@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import logo from "../../assets/Imagenes/Jordan. Nike.com-1.png";
+import logo from "../../assets/Imagenes/logoJordan.png";
 import send from "../../assets/Imagenes/send.png";
 import insta from "../../assets/Imagenes/instagram.png";
 import face from "../../assets/Imagenes/facebook.png";
