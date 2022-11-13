@@ -1,13 +1,12 @@
-import React, {useRef} from 'react';
+import React, {useRef, useEffect} from 'react';
 
 import { Container } from 'reactstrap';
-import logo from "../../assets/Imagenes/Jordan. Nike.com-1.png";
+import logo from "../../assets/Imagenes/logoJordan.png";
 import {NavLink, Link} from "react-router-dom";
 import carrito from "../../assets/Imagenes/carrito-de-compras.png";
 import login from '../../assets/Imagenes/login.png';
 import lupa from "../../assets/Imagenes/lupa.png";
 import menuCel from "../../assets/Imagenes/menu celu.png";
-
 import "../../styles/header.css";
 
 const nav_links = [
@@ -39,10 +38,27 @@ const nav_links = [
 ]
 
 const Header = () => {
-    const menuRef = useRef(null)
-    const dotMenu = ()=> menuRef.current.classList.toggle("show_menu")
+    const menuRef = useRef(null);
+    const headerRef = useRef(null);
+    
 
-    return <header className='header'>
+    const dotMenu = ()=> menuRef.current.classList.toggle("show_menu");
+    
+    useEffect (() => {
+
+        window.addEventListener('scroll', ()=>{
+            if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80){
+                headerRef.current.classList.add('header_shrink')
+            }
+            else{
+                headerRef.current.classList.remove('header_shrink')
+            }
+        })
+        return ()=> window.removeEventListener('scroll')
+    },[])
+
+
+    return <header className='header' ref={headerRef}>
 
         <Container>
             <div className='nav_wrapper d-flex align-items-center justify-content-between'>
@@ -71,7 +87,7 @@ const Header = () => {
             {/*iconos derechos barra de navegacion*/}
             <div className='nav_right d-flex align-items-center gap-3'>
                 <div className='carrito'>
-                <img src={carrito} alt='carrito' />
+                <img src={carrito} alt='carrito' /><span></span>
                 </div>
 
                 <div className="usuarios">

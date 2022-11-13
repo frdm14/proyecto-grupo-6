@@ -43,12 +43,6 @@
     color: black;
 
 }
-/*
-.boton_cate a:hover {
-    background-color: black;
-    color: whitesmoke;
-    transition: 0.3s;
-}*/
 
 .detalle p {
     color:grey;
@@ -93,4 +87,103 @@
     background: black !important;
     border-radius: 5px ;
     color: white !important;
+}
+
+.marcas_dispo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.logos_marcas{
+    background:#EA6464 ;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logos_marcas img{
+    padding-top: 10px;
+    width: 13%;
+    height: 90%;
+    object-fit:fill ;
+}
+
+.beneficios_compra-online{
+    padding-top: 10px;
+}
+
+.beneficios_online h2{
+    
+    text-align: center;
+}
+
+.carrusel_final{
+    padding-top: 10px;
+}
+.carrusel{
+    text-align: center;
+    }
+
+.titulo_carrusel span{
+    color: gray;
+}
+
+@media only screen and (max-width:768px) {
+    .contenido_imagen {
+        text-align: center;
+    }
+    .contenido_imagen p{
+        font-size: 0.8rem;
+        line-height: 20px;
+        color: black;
+    }    
+    .titulohome {
+        font-size: 1.5rem;
+        line-height: 40px;
+    }
+    .botonhome {
+        justify-content: center;
+    }
+    .botonhome button {
+        padding: 5px 15px;
+        font-size: 0.9rem;
+    }
+    .detalle {
+        justify-content: center;
+    }
+    .cate {
+        padding-top: 5px;
+    }
+    .beneficios_compra-online{
+        padding-top: 5px;
+    }
+
+}
+
+@media only screen and (max-width:576px) {
+    .contenido_imagen {
+        text-align: center;
+    }
+    
+    .contenido_imagen p{
+        font-size: 0.8rem;
+        line-height: 20px;
+        color: black;
+    }
+    
+    .titulohome {
+        font-size: 1.5rem;
+        line-height: 40px;
+    }
+
+    .botonhome {
+        justify-content: center;
+    }
+
+    .botonhome button {
+        padding: 5px 15px;
+        font-size: 0.7rem;
+    }
+
+    .detalle {
+        justify-content: center;
+    }
 }

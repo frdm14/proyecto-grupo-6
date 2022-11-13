@@ -6,7 +6,9 @@
 
 .footer_logo img{
     width: calc(100% - 80%);
+    margin-left: 30px;
     margin-bottom: 5px;
+
 }
 
 .footer_logo h5 {
