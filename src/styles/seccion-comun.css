@@ -1,0 +1,9 @@
+.common__section {
+    background: linear-gradient(#D9D9D9, #D9D9D9),
+      url("../assets/Imagenes/imagenprincipal.jpg");
+  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0px;
+  }

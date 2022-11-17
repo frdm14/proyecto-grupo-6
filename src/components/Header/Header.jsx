@@ -9,6 +9,10 @@ import lupa from "../../assets/Imagenes/lupa.png";
 import menuCel from "../../assets/Imagenes/menu celu.png";
 import "../../styles/header.css";
 
+import { useSelector, useDispatch } from 'react-redux';
+
+import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
+
 const nav_links = [
     {
         display: "Home",
@@ -22,14 +26,7 @@ const nav_links = [
     display: "Categorias",
     path: "./categorias"
 },
-{
-    display: "Gifts Cards",
-    path: "./gifts cards"
-},
-{
-    display: "Nuestras Marcas",
-    path: "./nuestras marcas"
-},
+
 {
     display: "Nosotros",
     path: "./nosotros"
@@ -40,10 +37,15 @@ const nav_links = [
 const Header = () => {
     const menuRef = useRef(null);
     const headerRef = useRef(null);
-    
+    const totalQuantity = useSelector(state=> state.cart.totalQuantity);
+    const dispatch = useDispatch();
 
     const dotMenu = ()=> menuRef.current.classList.toggle("show_menu");
-    
+
+    const toggleCart = ()=>{
+        dispatch(cartUiActions.toogle())
+    }
+
     useEffect (() => {
 
         window.addEventListener('scroll', ()=>{
@@ -86,8 +88,8 @@ const Header = () => {
 
             {/*iconos derechos barra de navegacion*/}
             <div className='nav_right d-flex align-items-center gap-3'>
-                <div className='carrito'>
-                <img src={carrito} alt='carrito' /><span></span>
+                <div className='carrito' onClick={toggleCart}>
+                <img src={carrito} alt='carrito' /><span>{totalQuantity}</span>
                 </div>
 
                 <div className="usuarios">

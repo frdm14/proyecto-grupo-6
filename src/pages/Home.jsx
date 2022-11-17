@@ -1,9 +1,10 @@
+/* eslint-disable no-template-curly-in-string */
 import React, {useState, useEffect} from 'react';
 
 import Helmet from "../components/Helmet/Helmet";
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 
-//*import imgprinc from "../assets/Imagenes/imagenprincipal.jpg";*//
+
 import isegur from "../assets/Imagenes/iconoseguridad.png";
 import "../styles/home.css";
 
@@ -150,7 +151,7 @@ const Home = () => {
                 </Row>
             </Container>
         </section>
-            <section className='pt-3'>
+            <section id='ofertas_dia' className='pt-3'>
                 <Container>
                     <Row>
                         <Col lg="12" className='text-center'>
