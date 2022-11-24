@@ -1,0 +1,83 @@
+{
+    "productos" : [
+    {
+        "id": "01",
+    "title": "Air Jordan-2",
+    "price": 100.0,
+    "image01": "./imagenes/basquet.jpg",
+    "category": "Basquet"
+    
+    },
+    {
+        "id": "02",
+        "title": "Botines",
+        "price": 125.0,
+        "image01": "./imagenes/botines.jpg",
+        "category": "Futbol"
+    },
+    {
+        "id": "03",
+        "title": "Running Varias",
+        "price": 90.0,
+        "image01": "./imagenes/running.jpg",
+        "category": "Running"
+    },
+    {
+        "id": "04",
+        "title": "Air Jordan-3",
+        "price": 110.0,
+        "image01": "./imagenes/basquet1.jpg",
+        "category": "Basquet"
+    },
+    {
+        "id": "05",
+        "title": "Air Jordan-3",
+        "price": 100.0,
+        "image01": "./imagenes/basquet2.jpg",
+        "category": "Basquet"
+    },
+    {
+        "id": "06",
+        "title": "Air Jordan-4",
+        "price": 100.0,
+        "image01": "./imagenes/basquet3.jpg",
+        "category": "Basquet"
+    },
+    {
+        "id": "07",
+        "title": "Air Jordan-4",
+        "price": 100.0,
+        "image01": "./imagenes/basquet4.jpg",
+        "category": "Basquet"
+    },
+    {
+        "id": "08",
+        "title": "Botines",
+        "price": 125.0,
+        "image01": "./imagenes/botines1.jpg",
+        "category": "Futbol"
+    },
+    
+    {
+        "id": "09",
+        "title": "Botines",
+        "price": 125.0,
+        "image01": "./imagenes/botines2.jpg",
+        "category": "Futbol"    
+    },
+    {
+        "id": "10",
+        "title": "Running Varias",
+        "price": 90.0,
+        "image01": "./imagenes/running1.jpg",
+        "category": "Running"
+    },
+    {
+        "id": "11",
+        "title": "Running Varias",
+        "price": 90.0,
+        "image01": "./imagenes/running2.jpg",
+        "category": "Running"
+    }
+    ]
+}
