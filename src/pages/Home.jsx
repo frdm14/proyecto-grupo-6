@@ -1,4 +1,4 @@
-/* eslint-disable no-template-curly-in-string */
+import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 
 import Helmet from "../components/Helmet/Helmet";
@@ -15,8 +15,6 @@ import Categoria from "../components/Categorias/categoria/Categoria";
 import pagosImg01 from "../assets/Imagenes/tarjeta-de-credito.png";
 import pagosImg02 from "../assets/Imagenes/digital-wallet.png";
 import pagosImg03 from "../assets/Imagenes/coupon.png";
-
-import products from "../assets/datos/productos";
 
 import imgCategoriaOfertas from "../assets/Imagenes/futbol-pelota.png";
 import imgCategoriaOfertas1 from "../assets/Imagenes/juego-de-basquetbol.png";
@@ -54,34 +52,44 @@ const formasPago = [
 
 const Home = () => {
 
-    const [category, setCategory]= useState("Todas")
-    const [allProducts, setAllProducts] = useState(products)
+    const [category, setCategory]= useState([]);
+    
+    
 
     useEffect(() => {
 
+        const obtenerProductos = async ()=> {
+            const baseUrl = "http://localhost:3000/productos";
+            const response = await axios.get(baseUrl);
+
+            console.log(response.data);
+            setCategory(response.data);
+        };obtenerProductos();
+        
         if(category === "TODAS"){
-            setAllProducts(products)
+            setCategory(category)
         }
 
         if(category === "BASQUET"){
-            const filteredProducts = products.filter(item=> item.category === "Basquet")
+            const filteredProducts = category.filter(item=> item.category === "Basquet")
 
-            setAllProducts(filteredProducts)
+            setCategory(filteredProducts)
         }
 
         if(category === "FUTBOL"){
-            const filteredProducts = products.filter(item=> item.category === "Futbol")
+            const filteredProducts = category.filter(item=> item.category === "Futbol")
 
-            setAllProducts(filteredProducts)
+            setCategory(filteredProducts)
         }
 
         if(category === "RUNNING"){
-            const filteredProducts = products.filter(item=> item.category === "Running")
+            const filteredProducts = category.filter(item=> item.category === "Running")
 
-            setAllProducts(filteredProducts)
+            setCategory(filteredProducts)
         }
-    },[category]);
-
+        
+    },[]);
+    
 
     return <Helmet title="Home">
         <section>
@@ -159,21 +167,21 @@ const Home = () => {
                         </Col>
                         <Col lg="12">
                             <div className='dia_categoria d-flex align-item-center justify-content-center gap-4'>
-                                <button className={'all_btn ${category === "TODAS" ? todasBtn : "" }'}onClick={()=> setCategory("TODAS")}>Todas
+                                <button className={`all_btn ${category === "TODAS" ? "todasBtn" : "" }`}onClick={()=> setCategory("TODAS")}>Todas
                                 </button>
-                                <button className={'d-flex align-item-center gap-2 ${category === "FUTBOL" ? "todasBtn" : "" }'} onClick={()=> setCategory("FUTBOL")}>
+                                <button className={`d-flex align-item-center gap-2 ${category === "FUTBOL" ? "todasBtn" : "" }`} onClick={()=> setCategory("FUTBOL")}>
                                     <img src={imgCategoriaOfertas} alt="" />Futbol
                                     </button>
-                                <button className={'d-flex align-item-center gap-2 ${category === "BASQUET" ? "todasBtn" : "" }'} onClick={()=> setCategory("BASQUET")}>
+                                <button className={`d-flex align-item-center gap-2 ${category === "BASQUET" ? "todasBtn" : "" }`} onClick={()=> setCategory("BASQUET")}>
                                     <img src={imgCategoriaOfertas1} alt="" />Basquet
                                     </button>
-                                <button className={'d-flex align-item-center gap-2 ${category === "RUNNING" ? "todasBtn" : "" }'} onClick={()=> setCategory("RUNNING")}>
+                                <button className={`d-flex align-item-center gap-2 ${category === "RUNNING" ? "todasBtn" : "" }`} onClick={()=> setCategory("RUNNING")}>
                                     <img src={imgCategoriaOfertas2} alt="" />Running
                                     </button>
                             </div>
                         </Col>
-                        {allProducts.map((item) => (
-                        <Col lg="3" md="4" key={item.id} className="mt-5">
+                        {category.map(item => (
+                        <Col lg="3" md="4" key={item.category} className="mt-5">
                             <Tarjetas item={item} />
                         </Col>
                         ))}
