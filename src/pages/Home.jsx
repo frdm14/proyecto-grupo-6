@@ -61,9 +61,9 @@ const Home = () => {
         const obtenerProductos = async ()=> {
             const baseUrl = "http://localhost:3000/productos";
             const response = await axios.get(baseUrl);
-
+            
             console.log(response.data);
-            setCategory(response.data);
+            setCategory(category.data);
         };obtenerProductos();
         
         if(category === "TODAS"){
